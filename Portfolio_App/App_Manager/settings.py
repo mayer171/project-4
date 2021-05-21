@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'Portfolio_App',
     'User_Auth',
     'frontend',
+    'knox',
 ]
 
 MIDDLEWARE = [

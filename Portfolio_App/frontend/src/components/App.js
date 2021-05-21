@@ -1,12 +1,28 @@
 import React, { Component } from 'react'
 import ReactDom from 'react-dom'
+import Chart from './Chart'
+import SignIn from './Signin'
+import SignUp from './SignUp'
+import Positions from './Positions'
+import { Provider } from 'react-redux'
+import store from '../store'
+
 
 class App extends Component {
-    state = {
-        working: true,
-    }
+    
     render () {
-        return <h1>React App</h1>
+        return (
+        <Provider store={store}>
+            <h1>Nav Bar</h1>
+            <SignIn />
+            <SignUp />
+            <Chart />
+            <Positions /> 
+            
+        
+        </Provider>
+        
+        )
     }
 }
 
