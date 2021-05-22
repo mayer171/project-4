@@ -1,11 +1,11 @@
 import axios from 'axios'
 import { GET_POSITIONS } from './types'
 
-export const getPostions = () => dispacth => {
+export const getPositions = () => dispatch => {
     axios
         .get('/api/positions/')
         .then(res => {
-            dispacth({
+            dispatch({
                 type: GET_POSITIONS,
                 payload: res.data
             })

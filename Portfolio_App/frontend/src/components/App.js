@@ -18,8 +18,6 @@ class App extends Component {
             <SignUp />
             <Chart />
             <Positions /> 
-            
-        
         </Provider>
         
         )
