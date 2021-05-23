@@ -21,6 +21,7 @@ module.exports = {
   optimization: {
     minimize: true,
   },
+  stats: 'errorDetails',
   plugins: [
     new webpack.DefinePlugin({
       "process.env": {

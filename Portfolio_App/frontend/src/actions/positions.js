@@ -1,5 +1,6 @@
 import axios from 'axios'
 import { GET_POSITIONS } from './types'
+import { tokenConfig } from './auth';
 
 export const getPositions = () => dispatch => {
     axios

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import ReactDom from 'react-dom'
 import Chart from './Chart'
-import SignIn from './Signin'
+//import SignIn from './Signin'
 import SignUp from './SignUp'
 import Positions from './Positions'
 import { Provider } from 'react-redux'
@@ -14,8 +14,7 @@ class App extends Component {
         return (
         <Provider store={store}>
             <h1>Nav Bar</h1>
-            <SignIn />
-            <SignUp />
+            
             <Chart />
             <Positions /> 
         </Provider>

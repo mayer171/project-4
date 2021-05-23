@@ -12,13 +12,6 @@ import {
     TableRow,
     Paper } from '@material-ui/core'
 
-
-const useStyles = makeStyles({
-    tabel: {
-        minWidth: 700,
-    },
-})
-
 export class Positions extends Component {
     static propTypes = {
         positions: PropTypes.array.isRequired,
