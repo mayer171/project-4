@@ -1,1 +1,1 @@
-web gunicorn Portfolio_App:app
+web gunicorn frontend:app
