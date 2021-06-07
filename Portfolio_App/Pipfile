@@ -51,6 +51,7 @@ socketIO-client-nexus = "==0.7.6"
 python-dotenv = "*"
 django-heroku = "*"
 whitenoise = "*"
+gunicorn = "*"
 
 [dev-packages]
 
