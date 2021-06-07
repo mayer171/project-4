@@ -5,3 +5,4 @@ router = routers.DefaultRouter()
 router.register('api/positions', PositionViewSet, 'Positions')
 
 urlpatterns = router.urls
+    

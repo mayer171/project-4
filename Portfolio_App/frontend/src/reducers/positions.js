@@ -1,7 +1,9 @@
-import { GET_POSITIONS } from '../actions/types.js'
+import { SELECT_POSITION, GET_POSITIONS } from '../actions/types.js'
+
 
 const initialState = {
-    positions: []
+    positions: [],
+    selected: ''
 }
 
 export default function(state = initialState, action) {
@@ -13,5 +15,10 @@ export default function(state = initialState, action) {
             }
         default:
             return state
+        case SELECT_POSITION:
+            return {
+                ...state,
+                selected: action.payload
+            }
     }
 }

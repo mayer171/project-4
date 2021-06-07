@@ -22,9 +22,11 @@
   },
   "dependencies": {
     "@material-ui/core": "^4.11.4",
+    "@material-ui/icons": "^4.11.2",
     "axios": "^0.21.1",
     "highcharts": "^9.1.0",
     "highcharts-react-official": "^3.0.0",
+    "prop-types": "^15.7.2",
     "react-redux": "^7.2.4",
     "react-router-dom": "^5.2.0",
     "redux": "^4.1.0",

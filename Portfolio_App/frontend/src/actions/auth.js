@@ -1,6 +1,5 @@
 import axios from 'axios';
 import { returnErrors } from './messages';
-
 import {
   USER_LOADED,
   USER_LOADING,
@@ -34,19 +33,18 @@ export const loadUser = () => (dispatch, getState) => {
 };
 
 // LOGIN USER
-export const login = (username, password) => (dispatch) => {
-  // Headers
+export const signin = (username, password) => (dispatch) => {
+  
   const config = {
     headers: {
       'Content-Type': 'application/json',
     },
   };
 
-  // Request Body
   const body = JSON.stringify({ username, password });
 
   axios
-    .post('/api/auth/login', body, config)
+    .post('/api/auth/signin', body, config)
     .then((res) => {
       dispatch({
         type: LOGIN_SUCCESS,
@@ -61,20 +59,19 @@ export const login = (username, password) => (dispatch) => {
     });
 };
 
-// REGISTER USER
-export const register = ({ username, password, email }) => (dispatch) => {
-  // Headers
+// User Signup
+export const signup = ({ username, password, email }) => (dispatch) => {
+  
   const config = {
     headers: {
       'Content-Type': 'application/json',
     },
   };
 
-  // Request Body
   const body = JSON.stringify({ username, email, password });
 
   axios
-    .post('/api/auth/register', body, config)
+    .post('/api/auth/signup', body, config)
     .then((res) => {
       dispatch({
         type: REGISTER_SUCCESS,
@@ -89,14 +86,14 @@ export const register = ({ username, password, email }) => (dispatch) => {
     });
 };
 
-// LOGOUT USER
+// LOGOUT 
 export const logout = () => (dispatch, getState) => {
   axios
     .post('/api/auth/logout/', null, tokenConfig(getState))
+    .then(console.log('logout'))
     .then((res) => {
-      dispatch({ type: 'CLEAR_LEADS' });
-      dispatch({
-        type: LOGOUT_SUCCESS,
+      dispatch({ type: 'CLEAR_POSITIONS' });
+      dispatch({ type: LOGOUT_SUCCESS,
       });
     })
     .catch((err) => {
@@ -104,19 +101,16 @@ export const logout = () => (dispatch, getState) => {
     });
 };
 
-// Setup config with token - helper function
+// Setup config with token
 export const tokenConfig = (getState) => {
-  // Get token from state
+  
   const token = getState().auth.token;
 
-  // Headers
   const config = {
     headers: {
       'Content-Type': 'application/json',
     },
   };
-
-  // If token, add to headers config
   if (token) {
     config.headers['Authorization'] = `Token ${token}`;
   }
