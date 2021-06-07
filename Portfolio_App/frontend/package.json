@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "webpack --mode development --watch",
+    "heroku-postbuild": "npm run dist",
     "build": "webpack --mode production"
   },
   "keywords": [],

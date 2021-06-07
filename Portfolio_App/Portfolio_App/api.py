@@ -2,9 +2,15 @@ from Portfolio_App.models import Position
 from rest_framework import viewsets, permissions
 from .serializers import PositionSerializer
 import pyEX as p 
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+API_KEY = os.getenv("API_KEY")
 
 # IEX Config
-c = p.Client(api_token='pk_8d6fb03eaebe4808b786d92cb8136482', version='stable')
+c = p.Client(api_token=API_KEY, version='stable')
 
 class PositionViewSet(viewsets.ModelViewSet):
     permission_classes = [
