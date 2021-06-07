@@ -50,6 +50,7 @@ Pygments = "==2.9.0"
 socketIO-client-nexus = "==0.7.6"
 python-dotenv = "*"
 django-heroku = "*"
+whitenoise = "*"
 
 [dev-packages]
 
