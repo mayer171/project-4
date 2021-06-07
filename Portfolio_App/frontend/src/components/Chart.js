@@ -21,4 +21,5 @@ export default function Chart(props) {
     return <div>
         <HighchartsReact highcharts={Highcharts} options={options} />
     </div>
-}
+} 
+
