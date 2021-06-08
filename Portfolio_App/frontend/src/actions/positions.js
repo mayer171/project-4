@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { ADD_POSITION, DELETE_POSITION, GET_POSITIONS, SELECT_POSITION} from './types'
+import { ADD_POSITION, DELETE_POSITION, GET_POSITIONS} from './types'
 import { tokenConfig } from './auth';
 import { createMessage, returnErrors } from './messages';
 
