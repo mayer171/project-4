@@ -7,13 +7,19 @@ from .serializers import SignupSerializer, UserSerializer, SigninSerializer
 class SignupAPI(generics.GenericAPIView):
     serializer_class = SignupSerializer
     def post(self, request, *args, **kwargs):
+        print('hitting the post route')
         serializer = self.get_serializer(data=request.data)
+        print('request data')
+        print(request.data)
         serializer.is_valid(raise_exception=True)
+        print('serializer is valid')
         user = serializer.save()
+        print('updated user model')
         return Response({
             "user": UserSerializer(user, context=self.get_serializer_context()).data,
             "token": AuthToken.objects.create(user)[1]
         })
+
 
 # User API
 class UserAPI(generics.RetrieveAPIView):
