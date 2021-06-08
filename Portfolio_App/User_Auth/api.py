@@ -10,7 +10,7 @@ class SignupAPI(generics.GenericAPIView):
         print('hitting the post route')
         serializer = self.get_serializer(data=request.data)
         print('request data')
-        print(request.data)
+        print(serializer)
        
         #serializer.is_valid(raise_exception=True)
         
