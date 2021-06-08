@@ -12,7 +12,7 @@ class SignupAPI(generics.GenericAPIView):
         print('request data')
         print(serializer)
        
-        #serializer.is_valid(raise_exception=True)
+        serializer.is_valid(raise_exception=True)
         
 
         print('serializer is valid')

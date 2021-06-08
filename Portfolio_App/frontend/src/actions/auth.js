@@ -44,7 +44,7 @@ export const signin = (username, password) => (dispatch) => {
   const body = JSON.stringify({ username, password });
 
   axios
-    .post('/api/auth/signin', body, config)
+    .post('/api/auth/signin/', body, config)
     .then((res) => {
       dispatch({
         type: LOGIN_SUCCESS,
@@ -71,7 +71,7 @@ export const signup = ({ username, password, email }) => (dispatch) => {
   const body = JSON.stringify({ username, email, password });
 
   axios
-    .post('/api/auth/signup', body, config)
+    .post('/api/auth/signup/', body, config)
     .then((res) => {
       dispatch({
         type: REGISTER_SUCCESS,
